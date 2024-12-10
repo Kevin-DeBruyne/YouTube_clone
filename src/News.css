@@ -1,0 +1,8 @@
+.news-items {
+    display: flex;
+    flex-Direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+    padding: 5px;
+    margin: 3%;
+  }
