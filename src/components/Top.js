@@ -3,8 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
+import { useState, useEffect } from 'react';
 function Top() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const changeHandler = (event) => {
+    setSearchQuery(event.target.value);
+  }
   return (
     <>
       <Navbar sticky="top" bg="dark" variant="dark">
@@ -23,9 +27,11 @@ function Top() {
           placeholder="Search"
           className="me-2"
           aria-label="Search"
+          onChange={changeHandler}
         />
         <Button variant="outline-success">Search</Button>
       </Form>
+      {searchQuery}
     </>
   );
 }
