@@ -1,12 +1,13 @@
 // import './App.css';
 import Top from './components/Top';
-import News from './components/News';
+import Search from './components/Search';
 function App() {
   
   return (
     <>
     <Top/>
-    <News/>
+    {/* <News/> */}
+    <Search/>
     {/* <Sample/> */}
     </>
     );
