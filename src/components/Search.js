@@ -2,7 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import NewsItems from "./NewsItems"; // Ensure this component is imported correctly.
-import { YOUTUBE_API_KEY} from '../config';
+import { YOUTUBE_API_KEY } from '../config';
+import '../Search.css';
 
 function Search() {
     const [searchQuery, setSearchQuery] = useState(""); // For the search input
@@ -64,7 +65,7 @@ function Search() {
                 <h1 style={{ marginLeft: "40%", marginTop: "3%" }}>
                     {searchQuery ? "Search Results" : "Popular Videos"}
                 </h1>
-                <div className="news-items">
+                <div className="search-items">
                     {val.map((x) => (
                         <NewsItems
                             key={x.id.videoId || x.id}
