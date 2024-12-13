@@ -6,9 +6,7 @@ function App() {
   return (
     <>
     <Top/>
-    {/* <News/> */}
     <Search/>
-    {/* <Sample/> */}
     </>
     );
 }
