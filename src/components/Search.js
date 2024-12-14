@@ -49,7 +49,7 @@ function Search() {
 
     return (
         <>
-            <Form className="d-flex">
+            <Form className="d-flex search-bar">
                 <Form.Control
                     type="search"
                     placeholder="Search"
