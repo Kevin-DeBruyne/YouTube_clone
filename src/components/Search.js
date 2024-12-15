@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
-import NewsItems from "./NewsItems"; // Ensure this component is imported correctly.
+import SearchItems from "./SearchItems"; // Ensure this component is imported correctly.
 import { YOUTUBE_API_KEY } from '../config';
 import '../Search.css';
 
@@ -67,7 +67,7 @@ function Search() {
                 </h1>
                 <div className="search-items">
                     {val.map((x) => (
-                        <NewsItems
+                        <SearchItems
                             key={x.id.videoId || x.id}
                             source={x.snippet.channelTitle}
                             link={`https://www.youtube.com/watch?v=${x.id.videoId || x.id}`}

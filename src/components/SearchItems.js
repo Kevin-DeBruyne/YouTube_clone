@@ -2,10 +2,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from "react-bootstrap/Badge";
 import '../Card.css';
-function NewsItems(props) {
+function SearchItems(props) {
   return (
     <Card className="card">
-      <Badge style={{position:"absolute", width: "auto"}} bg="danger">
+      <Badge style={{ position: "absolute", width: "auto" }} bg="danger">
         {props.source}
       </Badge>{" "}
       <Card.Img variant="top" src={props.img} />
@@ -20,4 +20,4 @@ function NewsItems(props) {
   );
 }
 
-export default NewsItems;
+export default SearchItems;

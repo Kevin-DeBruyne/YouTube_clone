@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Top from './components/Top';
 import Search from './components/Search';
-import Subscriptions from './components/Subscriptions'; // New Component
+import YouTubeSubscriptions from './components/YouTubeSubscriptions'; // New Component
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Top />
       <Routes>
         <Route path="/" element={<Search />} /> 
-        <Route path="/subscriptions" element={<Subscriptions />} />
+        <Route path="/subscriptions" element={<YouTubeSubscriptions />} />
       </Routes>
     </Router>
   );
