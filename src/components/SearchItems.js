@@ -13,7 +13,7 @@ function SearchItems(props) {
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.description}</Card.Text>
         <a target="_blank" rel="noreferrer" href={props.link}>
-          <Button variant="primary">Watch the video...</Button>
+          <Button variant="primary">{ props.readmore}</Button>
         </a>
       </Card.Body>
     </Card>

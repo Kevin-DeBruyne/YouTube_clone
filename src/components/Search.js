@@ -72,6 +72,7 @@ function Search() {
                             source={x.snippet.channelTitle}
                             link={`https://www.youtube.com/watch?v=${x.id.videoId || x.id}`}
                             title={x.snippet.title}
+                            readmore="Watch now..."
                             description={
                                 x.snippet.description.length > 50
                                     ? `${x.snippet.description.slice(0, 100)}...`

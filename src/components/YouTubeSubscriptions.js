@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import { YOUTUBE_API_KEY, AUTH_CLIENT_ID } from "../config";
+import SearchItems from "./SearchItems";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const YouTubeSubscriptions = () => {
   const [subscriptions, setSubscriptions] = useState([]);
@@ -77,8 +79,13 @@ const YouTubeSubscriptions = () => {
       const sortedSubscriptions = allSubscriptions.sort((a, b) =>
         a.snippet.title.localeCompare(b.snippet.title)
       );
-
+      
+      
       setSubscriptions(sortedSubscriptions);
+      console.log(subscriptions[0].snippet.thumbnails.high.url);
+      console.log(subscriptions[0].snippet.thumbnails.medium.url);
+      console.log(subscriptions[0].snippet.thumbnails.default.url);
+      console.log(subscriptions);
     } catch (error) {
       console.error("Error fetching subscriptions", error);
     }
@@ -90,18 +97,23 @@ const YouTubeSubscriptions = () => {
       {isAuthenticated ? (
         <div>
           <button onClick={handleSignOut}>Sign Out</button>
-          <ul>
+          <div className="search-items">
             {subscriptions.map((sub) => (
-              <li key={sub.id}>
-                <img
-                  src={sub.snippet.thumbnails.default.url}
-                  alt={sub.snippet.title}
-                  style={{ width: "50px", marginRight: "10px" }}
-                />
-                {sub.snippet.title}
-              </li>
+              <SearchItems
+                key={sub.id}
+                source={sub.snippet.title}
+                img={sub.snippet.thumbnails.high.url}
+                title={sub.snippet.title}
+                readmore="View Channel"
+                description={
+                  sub.snippet.description.length > 50
+                    ? `${sub.snippet.description.slice(0, 100)}...`
+                    : sub.snippet.description
+                }
+                link={`https://www.youtube.com/channel/${sub.snippet.resourceId.channelId}`}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       ) : (
         <button onClick={handleSignIn}>Show Subscriptions Page</button>
