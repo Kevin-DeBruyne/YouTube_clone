@@ -80,12 +80,8 @@ const YouTubeSubscriptions = () => {
         a.snippet.title.localeCompare(b.snippet.title)
       );
       
-      
+      console.log(sortedSubscriptions);
       setSubscriptions(sortedSubscriptions);
-      console.log(subscriptions[0].snippet.thumbnails.high.url);
-      console.log(subscriptions[0].snippet.thumbnails.medium.url);
-      console.log(subscriptions[0].snippet.thumbnails.default.url);
-      console.log(subscriptions);
     } catch (error) {
       console.error("Error fetching subscriptions", error);
     }
